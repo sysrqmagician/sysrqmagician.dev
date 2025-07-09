@@ -7,6 +7,4 @@ taxonomies.tag = [
     "gui"
 ]
 
-[extra]
-enable_comments = true
 +++

@@ -12,6 +12,7 @@ feed_filenames = ["atom.xml"]
 
 taxonomies = [
   { name = "tag", feed = true },
+  { name = "kind", feed = true },
 ]
 
 [markdown]
@@ -50,4 +51,8 @@ url = "@/blog/_index.md"
 [[extra.footer_menu]]
 name = "RSS Feed"
 url = "/atom.xml"
+
+[[extra.footer_menu]]
+name = "Tags"
+url = "/tag/"
 
