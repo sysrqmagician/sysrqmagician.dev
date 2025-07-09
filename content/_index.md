@@ -27,4 +27,5 @@ I also contribute other people's projects when I have the time.
 - Compositor: [niri](https://github.com/yalter/niri)
 - Terminal Emulator: [ghostty](https://github.com/ghostty-org/ghostty)
 - Shell: [fish](https://github.com/fish-shell/fish-shell)
+- Editor: [neovim](https://github.com/neovim/neovim) and [Zed](https://github.com/zed-industries/zed)
 
