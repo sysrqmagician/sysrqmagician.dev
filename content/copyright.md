@@ -37,7 +37,7 @@ The articles, images and any other creative works distributed on sysrqmagician.d
 
 Unless explictily stated otherwise, any part of the Content is made available under the following terms:
 - Use of the Content in the training of machine learning models is **expressly prohibited**.
-- For any other use, the Content is licensed under [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+- For any other use, the Content is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
     - Attribution: ``© 2025 by sysrqmagician <hello@sysrqmagician.dev>, licensed under CC BY-NC-SA 4.0``
 
 If you have any questions, you can reach me via e-mail: <hello@sysrqmagician.dev>
