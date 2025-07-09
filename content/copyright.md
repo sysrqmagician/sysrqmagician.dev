@@ -33,7 +33,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Content
 
-The articles, images and any other creative works distributed on sysrqmagician.dev, will hereinafter be collectively referred to as "Content".
+The articles, images and other creative works distributed on sysrqmagician.dev will hereinafter be collectively referred to as "Content".
 
 Unless explictily stated otherwise, any part of the Content is made available under the following terms:
 - Use of the Content in the training of machine learning models is **expressly prohibited**.
