@@ -1,13 +1,12 @@
 # The URL the site will be built for
 base_url = "https://sysrqmagician.dev"
-theme = "zola-bearblog"
+theme = "zola-bearblog-sysrq"
 
 compile_sass = false
 build_search_index = false
 
 taxonomies = [
-  { name = "categories", feed = true },
-  { name = "tags", feed = true },
+  { name = "tag", feed = true },
 ]
 
 [markdown]
@@ -24,6 +23,7 @@ site = "site"
 
 
 [extra]
+hide_made_with_line = true
 
 [extra.table_of_contents]
 show = true
@@ -36,7 +36,7 @@ url = "@/_index.md"
 
 [[extra.main_menu]]
 name = "Projects"
-url = "@/projects.md"
+url = "@/projects/_index.md"
 
 [[extra.main_menu]]
 name = "Blog"

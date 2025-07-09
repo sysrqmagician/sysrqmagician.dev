@@ -1,0 +1,12 @@
++++
+title = "quicklabel"
+description = "native, streamlined T2I datasetting tool"
+date = 2025-04-23
+taxonomies.tag = [
+    "rust",
+    "gui"
+]
+
+[extra]
+enable_comments = true
++++

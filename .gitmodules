@@ -1,3 +1,3 @@
-[submodule "themes/zola-bearblog"]
-	path = themes/zola-bearblog
-	url = https://codeberg.org/alanpearce/zola-bearblog
+[submodule "themes/zola-bearblog-sysrq"]
+	path = themes/zola-bearblog-sysrq
+	url = https://github.com/sysrqmagician/zola-bearblog-sysrq.git
