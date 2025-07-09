@@ -11,7 +11,7 @@ I go by *sysrqmagician* online, a reference to the [magic SysRq key](https://en.
 ## What do you do?
 I write personal tooling and publish it, if I think it might be useful to others. I also contribute other people's projects when I have the time.
 
-Take a look at my [projects page](/projects/) or [GitHub account](https://github.com/sysrqmagician) if you find out more.
+Take a look at my [projects page](/projects/) or [GitHub account](https://github.com/sysrqmagician) if you want to find out more.
 
 ## What do you use?
 **Programming Languages**
