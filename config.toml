@@ -56,3 +56,6 @@ url = "/atom.xml"
 name = "Tags"
 url = "/tag/"
 
+[[extra.footer_menu]]
+name = "Copyright"
+url = "@/copyright.md"
