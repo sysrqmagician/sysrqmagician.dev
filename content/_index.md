@@ -9,9 +9,9 @@ Hey there, I'm a software developer passionate about open source software and di
 I go by *sysrqmagician* online, a reference to the [magic SysRq key](https://en.wikipedia.org/wiki/Magic_SysRq_key).
 
 ## What do you do?
-I write personal tooling and publish it, if I think it might be useful to others. Take a look at my [projects page](/projects/) if you want to learn more.
+I write personal tooling and publish it, if I think it might be useful to others. I also contribute other people's projects when I have the time.
 
-I also contribute other people's projects when I have the time.
+Take a look at my [projects page](/projects/) or [GitHub account](https://github.com/sysrqmagician) if you find out more.
 
 ## What do you use?
 **Programming Languages**
