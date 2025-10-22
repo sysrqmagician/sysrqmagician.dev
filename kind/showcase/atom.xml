@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>sysrqmagician&#x27;s homepage - showcase</title>
+    <subtitle>A collection of showcases and ramblings</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://sysrqmagician.dev/kind/showcase/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://sysrqmagician.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-09-09T00:00:00+00:00</updated>
+    <id>https://sysrqmagician.dev/kind/showcase/atom.xml</id>
+    <entry xml:lang="en">
+        <title>JuMLi: Judge My List</title>
+        <published>2025-09-09T00:00:00+00:00</published>
+        <updated>2025-09-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/jumli/"/>
+        <id>https://sysrqmagician.dev/projects/jumli/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/jumli/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;figure&gt;
+&lt;img src=&quot;&#x2F;assets&#x2F;jumli_home.png&quot; alt=&quot;A screenshot of JuMLi&#x27;s interface&quot;&gt;
+&lt;figcaption&gt;The main interface&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;&lt;strong&gt;JuMLi&lt;&#x2F;strong&gt; is a web-based modlist checking tool for RimWorld. It compares the player&#x27;s mods against a database, containing notices associated with mod identifiers. It&#x27;s a static site automatically updated every 24 hours.&lt;&#x2F;p&gt;
+&lt;p&gt;At the time of writing, it used the following data:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;em&gt;Use This Instead&lt;&#x2F;em&gt; mod&#x27;s replacement definitions&lt;&#x2F;li&gt;
+&lt;li&gt;Local Datasets
+&lt;ul&gt;
+&lt;li&gt;An up-to-date subset of the Dubs Mods Community &quot;Shitlist&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Common advice given in the performance help channel of the Dubs Mods Discord, including recommended settings and slow or unstable mods&lt;&#x2F;li&gt;
+&lt;li&gt;Known bugs (e.g. the Odyssey Job Driver performance regression)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;figure&gt;
+&lt;img src=&quot;&#x2F;assets&#x2F;jumli_example_notices.png&quot; alt=&quot;A screenshot of JuMLi&#x27;s report on RimWorld Odyssey and the Slower Pawn Tick Rate mod, showing their identifiers and notices.&quot;&gt;
+&lt;figcaption&gt;Example records&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;JuMLi is a static site rebuilt every 24 hours using a custom static site generator, &lt;em&gt;jumli_gen&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;jumli_gen fetches the latest data from the following sources:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The JuMLi monorepo, which contains custom datasets&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;emipa606&#x2F;UseThisInstead&quot;&gt;Use This Instead&lt;&#x2F;a&gt; repo, which contains community-submitted alternatives to broken&#x2F;outdated mods defined in XML documents&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Each source is parsed and brought into a common format, before the mod records are consolidated based on unique identifiers: the Steam Workshop ID and Package ID.&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fork-ids&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;An index for the frontend is built, mapping these identifiers to an internal id. For each mod, the record is serialized to JSON and an HTML report is generated.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-a-static-site&quot;&gt;Why a static site?&lt;&#x2F;h3&gt;
+&lt;p&gt;If JuMLi had a backend, I would have to rent a server in order to run it. This way, it can be hosted for free using GitHub Pages, Cloudflare Pages or similar. Even if the aforementioned companies decide to cut down on free services in the future, a basic web hosting package that gives you FTP access and a managed Apache server is much cheaper than any VPS.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jumli.sysrqmagician.dev&#x2F;&quot;&gt;Main JuMLi instance&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;jumli&quot;&gt;GitHub Repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rimworldbase.com&#x2F;rimworld-guides&#x2F;jumli-judge-my-list&#x2F;&quot;&gt;RimWorld Base article&lt;&#x2F;a&gt; (initially submitted by me)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;fork-ids&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;After implementing this, I found out that a lot of modders publishing updated forks of other mods just reuse the original package ID. This doesn&#x27;t just cause issues for JuMLi; it&#x27;s a terrible practice, as, even disregarding that the &lt;em&gt;unique&lt;&#x2F;em&gt; ID should be unique, RimWorld&#x27;s mod loading will break if mods with duplicate IDs are installed. To mitigate this, the Use This Instead source drops the package ID from its records if the replacement&#x27;s ID is unchanged.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>NetZip</title>
+        <published>2025-04-05T00:00:00+00:00</published>
+        <updated>2025-04-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/netzip/"/>
+        <id>https://sysrqmagician.dev/projects/netzip/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/netzip/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;NetZip&lt;&#x2F;strong&gt; is a Rust library and CLI application that uses HTTP Ranged Requests to downloads only the required parts of a ZIP file, saving you bandwidth when interacting with large archives.
+You don&#x27;t need to download a 10GB ZIP file if you only want a couple MBs worth of files from it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;NetZip has three components&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;netzip_parser: A barebones parser for the ZIP format.&lt;&#x2F;li&gt;
+&lt;li&gt;netzip: The primary library crate. Uses reqwest to send requests and netzip_parser to parse the response, then decompresses it, if necessary.&lt;&#x2F;li&gt;
+&lt;li&gt;netzip_cli: Demo CLI built using the netzip crate.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;It downloads a file as follows:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Fetch the End Of Central Directory record, located at the end of the file.
+&lt;ul&gt;
+&lt;li&gt;Contains the location and size of the Central Directory&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Fetch the Central Directory
+&lt;ul&gt;
+&lt;li&gt;Contains metadata of all files in the archive, including size, compression type and header location&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Fetch the requested file&#x27;s Local File Header&lt;&#x2F;li&gt;
+&lt;li&gt;Fetch the file&#x27;s contents, which immediately follow the Local File Header&lt;&#x2F;li&gt;
+&lt;li&gt;Decompress the file, if necessary&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;usage-example&quot;&gt;Usage Example&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;$ netzip list &amp;quot;https:&#x2F;&#x2F;sysrqmagician.dev&#x2F;assets&#x2F;netzip_example.zip&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;+----------------------+-----------------+-------------------+
+&lt;&#x2F;span&gt;&lt;span&gt;| Path                 | Compressed Size | Uncompressed Size |
+&lt;&#x2F;span&gt;&lt;span&gt;+============================================================+
+&lt;&#x2F;span&gt;&lt;span&gt;| another_file.bin     | 0.00 KiB        | 0.00 KiB          |
+&lt;&#x2F;span&gt;&lt;span&gt;| demo.txt             | 0.02 KiB        | 0.02 KiB          |
+&lt;&#x2F;span&gt;&lt;span&gt;| yet_another_file.bin | 0.00 KiB        | 0.00 KiB          |
+&lt;&#x2F;span&gt;&lt;span&gt;+----------------------+-----------------+-------------------+
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ netzip extract &amp;quot;https:&#x2F;&#x2F;sysrqmagician.dev&#x2F;assets&#x2F;netzip_example.zip&amp;quot; demo.txt
+&lt;&#x2F;span&gt;&lt;span&gt;  Downloaded 1 files.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I&#x27;m still hosting the file under: &lt;code&gt;https:&#x2F;&#x2F;sysrqmagician.dev&#x2F;assets&#x2F;netzip_example.zip&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Feel free to try it out yourself!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;netzip&quot;&gt;GitHub Repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;netzip&quot;&gt;Crates.io Listing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>extraneous</title>
+        <published>2024-12-31T00:00:00+00:00</published>
+        <updated>2024-12-31T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/extraneous/"/>
+        <id>https://sysrqmagician.dev/projects/extraneous/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/extraneous/">&lt;figure&gt;
+  &lt;img src=&quot;&#x2F;assets&#x2F;extraneous_webext_popup.png&quot; alt=&quot;A screenshot of the extraneous web extension settings pop-up&quot;&gt;  
+  &lt;figcaption&gt;Extraneous Settings&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;extraneous&lt;&#x2F;strong&gt; is a WebExtension for Firefox and its derivatives, adding several quality-of-life features to Invidious, including...&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Watched Video Markers&lt;&#x2F;li&gt;
+&lt;li&gt;Video Filtering based on Title and Duration&lt;&#x2F;li&gt;
+&lt;li&gt;DeArrow integration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;extraneous is implemented in TypeScript and built using Deno. It was my first TypeScript project as well as my first WebExtension, but I think it turned out well. Since I use it daily, I&#x27;m also updating it actively.&lt;&#x2F;p&gt;
+&lt;p&gt;While building it, I stumbled upon discriminated unions:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ts&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ts &quot;&gt;&lt;code class=&quot;language-ts&quot; data-lang=&quot;ts&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;**
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt; * Types of requests that can be sent to the background script
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt; *&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;export type &lt;&#x2F;span&gt;&lt;span&gt;BackgroundRequest =
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;isWatched&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string }
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;setWatched&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;: boolean }
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;deArrow&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoDuration&lt;&#x2F;span&gt;&lt;span&gt;: number | null };
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I think they are a joy to use; quite similar to Rust&#x27;s fat enums, though less strictly checked. Certainly an improvement over Vanilla JS. The background worker is much easier to maintain this way.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;extraneous&quot;&gt;GitHub repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;addons.mozilla.org&#x2F;en-US&#x2F;firefox&#x2F;addon&#x2F;extraneous&#x2F;&quot;&gt;AMO Listing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>markovgen</title>
+        <published>2024-05-15T00:00:00+00:00</published>
+        <updated>2024-05-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/markovgen/"/>
+        <id>https://sysrqmagician.dev/projects/markovgen/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/markovgen/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;markovgen&lt;&#x2F;strong&gt; is a Rust library for generating text sequences using markov chains. It works by building a graph from a text dataset and then sampling it. The graph structure created in the &#x27;compilation&#x27; step is simplified down to a simple array containing references to other elements and alongside pre-computed values, making traversal very fast.&lt;&#x2F;p&gt;
+&lt;p&gt;The crate comes with an example CLI application, &lt;strong&gt;markovcli&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;This was my first proper Rust project. I wanted to build a name generator using Markov chains, which is why it only supports constructing sequences out of individual chars. I might revisit it and implement other kinds of &#x27;components&#x27; in the future.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;markovgen&quot;&gt;GitHub Repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;markovgen&quot;&gt;Crates.io Listing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

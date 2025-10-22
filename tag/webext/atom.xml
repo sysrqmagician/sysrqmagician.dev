@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>sysrqmagician&#x27;s homepage - webext</title>
+    <subtitle>A collection of showcases and ramblings</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://sysrqmagician.dev/tag/webext/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://sysrqmagician.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-31T00:00:00+00:00</updated>
+    <id>https://sysrqmagician.dev/tag/webext/atom.xml</id>
+    <entry xml:lang="en">
+        <title>extraneous</title>
+        <published>2024-12-31T00:00:00+00:00</published>
+        <updated>2024-12-31T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/extraneous/"/>
+        <id>https://sysrqmagician.dev/projects/extraneous/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/extraneous/">&lt;figure&gt;
+  &lt;img src=&quot;&#x2F;assets&#x2F;extraneous_webext_popup.png&quot; alt=&quot;A screenshot of the extraneous web extension settings pop-up&quot;&gt;  
+  &lt;figcaption&gt;Extraneous Settings&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;extraneous&lt;&#x2F;strong&gt; is a WebExtension for Firefox and its derivatives, adding several quality-of-life features to Invidious, including...&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Watched Video Markers&lt;&#x2F;li&gt;
+&lt;li&gt;Video Filtering based on Title and Duration&lt;&#x2F;li&gt;
+&lt;li&gt;DeArrow integration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;extraneous is implemented in TypeScript and built using Deno. It was my first TypeScript project as well as my first WebExtension, but I think it turned out well. Since I use it daily, I&#x27;m also updating it actively.&lt;&#x2F;p&gt;
+&lt;p&gt;While building it, I stumbled upon discriminated unions:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ts&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ts &quot;&gt;&lt;code class=&quot;language-ts&quot; data-lang=&quot;ts&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;**
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt; * Types of requests that can be sent to the background script
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt; *&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;export type &lt;&#x2F;span&gt;&lt;span&gt;BackgroundRequest =
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;isWatched&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string }
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;setWatched&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;value&lt;&#x2F;span&gt;&lt;span&gt;: boolean }
+&lt;&#x2F;span&gt;&lt;span&gt;  | { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;deArrow&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoId&lt;&#x2F;span&gt;&lt;span&gt;: string; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;videoDuration&lt;&#x2F;span&gt;&lt;span&gt;: number | null };
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I think they are a joy to use; quite similar to Rust&#x27;s fat enums, though less strictly checked. Certainly an improvement over Vanilla JS. The background worker is much easier to maintain this way.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;extraneous&quot;&gt;GitHub repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;addons.mozilla.org&#x2F;en-US&#x2F;firefox&#x2F;addon&#x2F;extraneous&#x2F;&quot;&gt;AMO Listing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

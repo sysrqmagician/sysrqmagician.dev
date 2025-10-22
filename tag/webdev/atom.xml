@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>sysrqmagician&#x27;s homepage - webdev</title>
+    <subtitle>A collection of showcases and ramblings</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://sysrqmagician.dev/tag/webdev/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://sysrqmagician.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-09-09T00:00:00+00:00</updated>
+    <id>https://sysrqmagician.dev/tag/webdev/atom.xml</id>
+    <entry xml:lang="en">
+        <title>JuMLi: Judge My List</title>
+        <published>2025-09-09T00:00:00+00:00</published>
+        <updated>2025-09-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://sysrqmagician.dev/projects/jumli/"/>
+        <id>https://sysrqmagician.dev/projects/jumli/</id>
+        
+        <content type="html" xml:base="https://sysrqmagician.dev/projects/jumli/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;figure&gt;
+&lt;img src=&quot;&#x2F;assets&#x2F;jumli_home.png&quot; alt=&quot;A screenshot of JuMLi&#x27;s interface&quot;&gt;
+&lt;figcaption&gt;The main interface&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;&lt;strong&gt;JuMLi&lt;&#x2F;strong&gt; is a web-based modlist checking tool for RimWorld. It compares the player&#x27;s mods against a database, containing notices associated with mod identifiers. It&#x27;s a static site automatically updated every 24 hours.&lt;&#x2F;p&gt;
+&lt;p&gt;At the time of writing, it used the following data:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;em&gt;Use This Instead&lt;&#x2F;em&gt; mod&#x27;s replacement definitions&lt;&#x2F;li&gt;
+&lt;li&gt;Local Datasets
+&lt;ul&gt;
+&lt;li&gt;An up-to-date subset of the Dubs Mods Community &quot;Shitlist&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;Common advice given in the performance help channel of the Dubs Mods Discord, including recommended settings and slow or unstable mods&lt;&#x2F;li&gt;
+&lt;li&gt;Known bugs (e.g. the Odyssey Job Driver performance regression)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-notes&quot;&gt;Implementation Notes&lt;&#x2F;h2&gt;
+&lt;figure&gt;
+&lt;img src=&quot;&#x2F;assets&#x2F;jumli_example_notices.png&quot; alt=&quot;A screenshot of JuMLi&#x27;s report on RimWorld Odyssey and the Slower Pawn Tick Rate mod, showing their identifiers and notices.&quot;&gt;
+&lt;figcaption&gt;Example records&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;p&gt;JuMLi is a static site rebuilt every 24 hours using a custom static site generator, &lt;em&gt;jumli_gen&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;jumli_gen fetches the latest data from the following sources:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The JuMLi monorepo, which contains custom datasets&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;emipa606&#x2F;UseThisInstead&quot;&gt;Use This Instead&lt;&#x2F;a&gt; repo, which contains community-submitted alternatives to broken&#x2F;outdated mods defined in XML documents&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Each source is parsed and brought into a common format, before the mod records are consolidated based on unique identifiers: the Steam Workshop ID and Package ID.&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fork-ids&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;An index for the frontend is built, mapping these identifiers to an internal id. For each mod, the record is serialized to JSON and an HTML report is generated.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-a-static-site&quot;&gt;Why a static site?&lt;&#x2F;h3&gt;
+&lt;p&gt;If JuMLi had a backend, I would have to rent a server in order to run it. This way, it can be hosted for free using GitHub Pages, Cloudflare Pages or similar. Even if the aforementioned companies decide to cut down on free services in the future, a basic web hosting package that gives you FTP access and a managed Apache server is much cheaper than any VPS.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;external-links&quot;&gt;External Links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jumli.sysrqmagician.dev&#x2F;&quot;&gt;Main JuMLi instance&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sysrqmagician&#x2F;jumli&quot;&gt;GitHub Repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rimworldbase.com&#x2F;rimworld-guides&#x2F;jumli-judge-my-list&#x2F;&quot;&gt;RimWorld Base article&lt;&#x2F;a&gt; (initially submitted by me)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;fork-ids&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;After implementing this, I found out that a lot of modders publishing updated forks of other mods just reuse the original package ID. This doesn&#x27;t just cause issues for JuMLi; it&#x27;s a terrible practice, as, even disregarding that the &lt;em&gt;unique&lt;&#x2F;em&gt; ID should be unique, RimWorld&#x27;s mod loading will break if mods with duplicate IDs are installed. To mitigate this, the Use This Instead source drops the package ID from its records if the replacement&#x27;s ID is unchanged.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+        
+    </entry>
+</feed>
