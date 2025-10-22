@@ -1,5 +1,6 @@
 +++
 title = "Blog"
+sort_by = "date"
 
 [extra]
 list_taxonomies = [
@@ -7,4 +8,3 @@ list_taxonomies = [
     "tag"
 ]
 +++
-Under Construction
