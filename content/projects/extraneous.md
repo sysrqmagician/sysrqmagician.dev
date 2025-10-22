@@ -1,6 +1,6 @@
 +++
 title = "extraneous"
-description = "A Firefox extension adding additional features to Invidious."
+description = "A Firefox extension adding convenient features and integrations to Invidious."
 date = 2024-12-31
 
 taxonomies.kind = [
