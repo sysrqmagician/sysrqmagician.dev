@@ -34,7 +34,7 @@ It downloads a file as follows:
 1. Fetch the file's contents, which immediately follow the Local File Header
 1. Decompress the file, if necessary 
 
-## Usage example
+## Usage Example
 ```
 $ netzip list "https://sysrqmagician.dev/assets/netzip_example.zip"
 +----------------------+-----------------+-------------------+
