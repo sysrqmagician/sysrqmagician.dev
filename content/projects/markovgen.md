@@ -1,6 +1,5 @@
 +++
 title = "markovgen"
-draft = true
 description = "Name generation using markov chains, fast."
 date = 2024-05-15
 
