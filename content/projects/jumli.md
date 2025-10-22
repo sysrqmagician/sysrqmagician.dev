@@ -57,4 +57,4 @@ If JuMLi had a backend, I would have to rent a server in order to run it. This w
 
 ---
 
-[^fork-ids]: After implementing this, I found out that a lot of modders publishing updated forks of other mods just reuse the original package ID. This doesn't just cause issues for JuMLi; it's a terrible practice as, even disregarding that the *unique* ID should be unique, RimWorld's mod loading will break if mods with duplicate IDs are installed. To mitigate this, the Use This Instead source drops the package ID from its records if the replacement's ID is unchanged.
+[^fork-ids]: After implementing this, I found out that a lot of modders publishing updated forks of other mods just reuse the original package ID. This doesn't just cause issues for JuMLi; it's a terrible practice, as, even disregarding that the *unique* ID should be unique, RimWorld's mod loading will break if mods with duplicate IDs are installed. To mitigate this, the Use This Instead source drops the package ID from its records if the replacement's ID is unchanged.
