@@ -9,7 +9,7 @@ taxonomies.kind = [
 
 taxonomies.tag = [
     "rust",
-    "static-site-generation",
+    "ssg",
     "webdev"
 ]
 
