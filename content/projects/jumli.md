@@ -24,10 +24,10 @@ taxonomies.tag = [
 **JuMLi** is a web-based modlist checking tool for RimWorld. It compares the player's mods against a database, containing notices associated with mod identifiers. It's a static site automatically updated every 24 hours.
 
 At the time of writing, it used the following data:
-- *Use This Instead*
+- The *Use This Instead* mod's replacement definitions
 - Local Datasets
     - An up-to-date subset of the Dubs Mods Community "Shitlist"
-    - Common advice given in the performance help channel of the Dubs Mods Discord I collected, including recommended settings and slow or unstable mods
+    - Common advice given in the performance help channel of the Dubs Mods Discord, including recommended settings and slow or unstable mods
     - Known bugs (e.g. the Odyssey Job Driver performance regression)
 
 ## Implementation Notes
